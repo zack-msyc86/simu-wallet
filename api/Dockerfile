@@ -17,10 +17,10 @@ RUN go mod download
 COPY . .
 
 # アプリケーションをビルド
-RUN go build -o /go/main
+RUN go build -o /go/server/main cmd/server/main.go
 
 # ポートの公開
 EXPOSE 8080
 
 # アプリケーションを実行
-CMD ["/go/main"]
+CMD ["/go/server/main"]
